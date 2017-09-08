@@ -1,6 +1,6 @@
 ﻿namespace Win_threads
 {
-    partial class Form1
+    partial class frm_threadpool
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_mainthread = new System.Windows.Forms.Button();
+            this.btn_threadpool = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btn_mainthread
+            // btn_threadpool
             // 
-            this.btn_mainthread.Location = new System.Drawing.Point(57, 124);
-            this.btn_mainthread.Name = "btn_mainthread";
-            this.btn_mainthread.Size = new System.Drawing.Size(190, 98);
-            this.btn_mainthread.TabIndex = 0;
-            this.btn_mainthread.Text = "MAIN THREAD";
-            this.btn_mainthread.UseVisualStyleBackColor = true;
-            this.btn_mainthread.Click += new System.EventHandler(this.btn_mainthread_Click);
+            this.btn_threadpool.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_threadpool.Location = new System.Drawing.Point(229, 316);
+            this.btn_threadpool.Name = "btn_threadpool";
+            this.btn_threadpool.Size = new System.Drawing.Size(154, 67);
+            this.btn_threadpool.TabIndex = 0;
+            this.btn_threadpool.Text = "threadpool";
+            this.btn_threadpool.UseVisualStyleBackColor = true;
+            this.btn_threadpool.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // frm_threadpool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.btn_mainthread);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(645, 458);
+            this.Controls.Add(this.btn_threadpool);
+            this.Name = "frm_threadpool";
+            this.Text = "frm_threadpool";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btn_mainthread;
+        private System.Windows.Forms.Button btn_threadpool;
     }
 }
-
