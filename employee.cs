@@ -3,36 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Consoleoverrid
+namespace Console_oop_gc
 {
-    class employee
+    class employee  :IDisposable
     {
-        protected int employeeid;
-        protected string employeename;
-        protected int employeeperdaysalary;
-        protected int noofdays;
-        public employee(int employeeid, string employeename, int employeeperdaysalary, int noofdays)
-        {
-            this.employeeid = employeeid;
-            this.employeename = employeename;
-            this.employeeperdaysalary = employeeperdaysalary;
-            this.noofdays = noofdays;
-        }
-        public string getdetails()
-        {
-            return this.employeeid + " " + this.employeename;
-        }
-        public void getwork()
-        {
-            Console.WriteLine("work called");
-        }
 
-        public virtual int getsalary() //giving permission to override so virtual key word
+        public void Dispose()
         {
-            int bonus = 5000;
-            int pf = 2000;
-            return (noofdays * employeeperdaysalary) + bonus - pf;
+            Console.WriteLine("dispose");
+            //database.close()
+            //file.close()
         }
-
     }
 }
