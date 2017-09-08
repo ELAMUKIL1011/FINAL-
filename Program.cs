@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Win_threads
+namespace Win_xml
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace Win_threads
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_threadpool());
+            Application.Run(new Form1());
         }
     }
 }
