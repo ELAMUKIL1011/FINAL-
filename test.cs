@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Console_oop_gc
+namespace Console_generics
 {
-    class test
+    class test<x>
     {
-        public test()
+        public x getdata(x i)
         {
-            Console.WriteLine("object creatd");
+            return i; 
         }
-        ~test() //destructor no parameter // finalize
+        public T Genericfun<T>(T obj)
         {
-            Console.WriteLine("object destroyed");
+            return obj;
         }
     }
 }
