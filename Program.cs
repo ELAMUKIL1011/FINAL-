@@ -3,38 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Console_oop_gc
+namespace ConsoleApplication1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            employee obj 
+            HR hr = new HR();
+            Account ac = new Account();
+            Manager ma = new Manager();
+            Employee e = new Employee(123,"aish","pune","kk nagar ",20000,".net ",2,123654789,"hdfc",21);
+            hr.getemployee(e);
+            ac.getemployee(e);
+            ma.getemployee(e);
 
-
-
-
-
-            using (employee obj = new employee())
-            {
-
-                IDisposable d = obj; //using internally do the folowing two line 
-                d.Dispose();
-            }
-         /*   int i = 0;
-            while (i < 5)
-            {
-                test obj = new test();
-                if (i == 3)
-                {
-                    GC.SuppressFinalize(obj); 
-                }
-                obj = null;
-                i++;
-
-            
-            }
-            GC.Collect(); // destructor called */
             Console.ReadLine();
         }
     }
