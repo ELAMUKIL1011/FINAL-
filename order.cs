@@ -3,45 +3,125 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace assign3._3
+namespace assignment_windows_day5
 {
     class order
     {
-        protected int customerid;
-        protected string customername;
-        protected int itemqty;
-        protected int itemprice;
-        public int pcustomerid
+         int orderid;
+        static int count;
+        int ordervalue;
+        private int itemquantity;
+        private int itemprice;
+        private string itemname;
+        private string customername;
+        private string paymentoption;
+        private string ordercity;
+        private string address;
+
+       
+
+        public order(int itemquantity, int itemprice,string customername,string ordercity,string address,string paymentoption,string itemname)
         {
-            get {
-                return customerid;
-            
-            }
+            this.itemprice = itemprice;
+            this.itemquantity = itemquantity;
+            count++;
+            this.orderid = count;
+            this.itemname=itemname;
+            this.ordercity=ordercity;
+            this.customername=customername;
+            this.paymentoption=paymentoption;
+            this.address = address;
+           
+         
+        
         }
-        public string pcustomername
+        public int porderid
         {
             get
             {
+
+                return this.orderid;
+            
+            }
+        
+        }
+
+
+
+
+        public int pitemquantity
+        {
+
+            get {
+
+                return itemquantity;
+            }
+        
+        }
+        public int pitemprice
+        {
+
+            get
+            {
+
+                return itemprice;
+            }
+
+        }
+        public string pcustomername
+        {
+            get {
                 return customername;
 
+            
+            }
+        
+        }
+
+        public string pitemname
+        {
+
+            get {
+
+                return itemname;
+            }
+        
+        }
+        public string pordercity
+        {
+            get {
+
+                return ordercity;
+            }
+        
+        }
+        public string paddress
+        {
+            get
+            {
+
+                return address;
+            }
+
+        }
+
+        public string ppaymentoption
+        {
+
+            get {
+
+                return paymentoption;
             }
         }
-        
-        public order(int customerid, string customername, int itemqty, int itemprice)
+
+        public int getordervalue()
         {
-            this.customerid = customerid;
-            this.customername = customername;
-            this.itemprice = itemprice;
-            this.itemqty = itemqty;
-
-
-        }
-        public virtual double getordervalue()
-        {
-
-            return itemqty*itemprice;
+            ordervalue = itemquantity * itemprice;
+            return ordervalue;
         }
         
+
+
 
     }
 }
