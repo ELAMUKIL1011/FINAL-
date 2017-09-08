@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
+using System.Text;
 
-namespace win_day1
+namespace console_day1
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+         /*   Console.WriteLine("enter your name :");
+            string name;
+            name = Console.ReadLine();
+            Console.WriteLine("your name is :" + name);
+            Console.ReadLine();*/
+            Console.WriteLine(DateTime.Today);
+            Console.WriteLine(DateTime.Now);
+            Console.WriteLine(DateTime.DaysInMonth(28,2017));
+            Console.ReadLine();
+
         }
     }
 }
