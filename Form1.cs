@@ -7,26 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace practice
+namespace Win_day5
 {
-    public partial class Form1 : Form
+    public partial class Frm_login /*  class */ : Form
     {
-        public Form1()
+        public Frm_login() // constructor 
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+       
+
+        private void btn_login_Click(object sender, EventArgs e)
         {
+            if (txt_loginid.Text == "")
+            {
+                MessageBox.Show("enter login id");
+            }
+            else if (txt_pass.Text == "")
+            {
 
-        }
+                MessageBox.Show("enter password");
+            }
+            else
+            {
 
-        private void sum_Click(object sender, EventArgs e)
-        {
-            DateTime t = DateTime.Today;
-            textBox2.Text = Convert.ToString((Convert.ToInt32(t-(Convert.ToDateTime(textBox1.Text))))/365);
-
-
+                int loginid = Convert.ToInt32(txt_loginid.Text);
+                string password = txt_pass.Text;
+                if (loginid == 1001 && password == "password123")
+                {
+                    MessageBox.Show("valid user");
+                    frm_controls obj = new frm_controls();
+                    obj.Show();
+                }
+                else
+                {
+                    MessageBox.Show("invalid user");
+                }
+            }
 
         }
     }
