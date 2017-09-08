@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Console_oop3
+namespace Consoleoverrid
 {
     class employee
     {
-        public int Employee_id;
-        public static int count;
-        public project empproject;
-        static employee()
+        protected int employeeid;
+        protected string employeename;
+        protected int employeeperdaysalary;
+        protected int noofdays;
+        public employee(int employeeid, string employeename, int employeeperdaysalary, int noofdays)
         {
-            count = 5;
+            this.employeeid = employeeid;
+            this.employeename = employeename;
+            this.employeeperdaysalary = employeeperdaysalary;
+            this.noofdays = noofdays;
         }
-        public void setproject(project p)
+        public string getdetails()
         {
-            empproject = p;
+            return this.employeeid + " " + this.employeename;
+        }
+        public void getwork()
+        {
+            Console.WriteLine("work called");
         }
 
-
-        public void update()
+        public virtual int getsalary() //giving permission to override so virtual key word
         {
-            employee.count++;
+            int bonus = 5000;
+            int pf = 2000;
+            return (noofdays * employeeperdaysalary) + bonus - pf;
+        }
 
-        }
-        public static int getdata()  // in this function we cannot use employee id directly
-        {
-            return 100;
-        }
-     
     }
 }
