@@ -3,65 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Console_oop1
+namespace Console_oop2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("enter the customer details:");
-        
-            Console.WriteLine("enter the customer first name :");
-            string customerFname = Console.ReadLine();
-            
-            Console.WriteLine("enter the customer last name :");
-            string customerLname = Console.ReadLine();
+            Student obj = new Student(100, "vifhh", 60);
+            Console.WriteLine(obj.Pstudentid);
+            Console.WriteLine(obj.Pstudentname);
+            Console.WriteLine(obj.Pstudentmarks);
 
-            Console.WriteLine("enter the customer Account id :");
-             int accountid = Convert.ToInt32(Console.ReadLine());
-             Console.WriteLine("enter the customer Id:");
-             int customerid= Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter the customer Account balance:");
-             int accountbalance = Convert.ToInt32(Console.ReadLine());
-             customer obj = new customer(customerid,customerFname,customerLname,accountbalance,accountid);
-        
-            string Name=obj.customerFullname();
-            Console.WriteLine("Customer Nmae :" + Name);
-            int Balance = obj.balance();
-            Console.WriteLine("Account Balance :" + Balance);
-            Console.WriteLine("enter 1 to update or 0 to exit :");
-            int option = Convert.ToInt32(Console.ReadLine());
-            if (option == 1)
+            Console.WriteLine(obj.Pstudentstatus);
+            obj.Pstudentname = Console.ReadLine()   ;
+            obj.Pstudentmarks = 1000;
+            Console.WriteLine(obj.Pstudentmarks);
+            Console.WriteLine(obj.Pstudentstatus);
+            Console.WriteLine(obj.Pstudentname);
+            obj.Pstudentmarks = 75;
+            Console.WriteLine(obj.Pstudentmarks);
+            Console.WriteLine(obj.Pstudentstatus);
+
+
+
+
+
+
+         /*   customer c = new customer();
+            c.getdata();
+            Test obj = new Test(1000,"abc");
+            Customernameupdatestatus status = obj.update(100, "");
+            if (status==Customernameupdatestatus.Updated)
             {
-                Console.WriteLine("enter the customer id to update the name");
-                int id = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Customer first Nmae :");
-                customerFname = Console.ReadLine();
-                Console.WriteLine("Customer Last Nmae :");
-                customerLname = Console.ReadLine();
-                bool test = obj.updatename(id, customerFname, customerLname);
-                if (test)
-                {
-                    Console.WriteLine("updated");
-
-                    Console.WriteLine("thank u");
-
-                }
-                else
-                {
-                   
-                    Console.WriteLine("Not updated");
-
-                    Console.WriteLine("thank u");
-
-                }
+                Console.WriteLine("yes updated");
+            }
+           
+else if(status==Customernameupdatestatus.invalidname)
+            {
+                Console.WriteLine("Customer name is invalid");
 
             }
-            else
+            else if(status==Customernameupdatestatus.Invalidcustomerid)
             {
-                Console.WriteLine("thank u");
+                Console.WriteLine(" customer id is invalid");
             }
+
+
+            int salary = obj.getsalary(10000, 31); //normal way
+            Console.WriteLine(salary);
+            salary = obj.getsalary(10000); //oneoptional parameter 
+            Console.WriteLine(salary);
+            salary = obj.getsalary(no:31,perdayssalary: 10000); //named parameter 
+            Console.WriteLine(salary);*/
             Console.ReadLine();
+
 
         }
     }
