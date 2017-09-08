@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Win_event_delegates
+namespace assignment_assembly
 {
     public partial class Form1 : Form
     {
@@ -16,9 +16,17 @@ namespace Win_event_delegates
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_salary_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hello");
+            int perdaysal = Convert.ToInt32(txt_perdaysal.Text);
+            int numberofdays = Convert.ToInt32(txt_numofdays.Text);
+            calc_sal.Class1 obj = new calc_sal.Class1();
+
+            
+
+
+            int sal = obj.getsalary(perdaysal,numberofdays); 
+            MessageBox.Show("salary  : " + sal);
         }
     }
 }
