@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace win_day1
+namespace practice
 {
     public partial class Form1 : Form
     {
@@ -16,14 +16,18 @@ namespace win_day1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_addcustomer_Click(object sender, EventArgs e)
+        private void sum_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hello from dot net ");
+            DateTime t = DateTime.Today;
+            textBox2.Text = Convert.ToString((Convert.ToInt32(t-(Convert.ToDateTime(textBox1.Text))))/365);
+
+
+
         }
     }
 }
