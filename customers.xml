@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customers>
+  <Customerinfo>
+    <Customerid>1000</Customerid>
+    <Customername>aishu</Customername>
+    <Customerage>25</Customerage>
+    <Customeraddress>
+
+      <streetnumber>212</streetnumber>
+      <city>chennai</city>
+      <pin>600044</pin>
+    </Customeraddress>
+    <customercontact>0432222001</customercontact>
+  </Customerinfo>
+  <Customerinfo>
+    <Customerid>1001</Customerid>
+    <Customername>elamukil</Customername>
+    <Customerage>20</Customerage>
+    <Customeraddress>
+
+      <streetnumber> 500</streetnumber>
+      <city>pune</city>
+      <pin>60009</pin>
+    </Customeraddress>
+
+    <customercontact>0232155</customercontact>
+  </Customerinfo>
+
+  <customerinfo/>
+  </Customers>
