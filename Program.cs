@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace console_delegate
+namespace Console_event_delegationmodel
 {
     class Program
     {
@@ -11,9 +11,9 @@ namespace console_delegate
         {
 
             test t = new test();
-            t.run();
+            t.bind();
+            t.fire();
             Console.ReadLine();
-
 
 
         }
