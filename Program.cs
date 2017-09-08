@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Win_threads_assignment
+namespace Win_ASSIGNMENT_XML
 {
     static class Program
     {

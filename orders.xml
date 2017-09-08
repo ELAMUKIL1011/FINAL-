@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<orders>
+  <ordersinfo>
+<orderid>001</orderid>
+  <customerid> 1234</customerid>
+  <customername>ABI</customername>
+  <productinfo>
+    <productid>100</productid>
+    <productname>mobile phone</productname>
+    <productquantity>10</productquantity>
+    <productprice>100</productprice>
+   </productinfo>
+  <productinfo>
+    <productid>101</productid>
+    <productname> laptop</productname>
+    <productquantity> 20</productquantity>
+    <productprice> 1000</productprice>    
+  </productinfo>
+  </ordersinfo>
+  <ordersinfo>
+    <orderid>002</orderid>
+    <customerid>1235</customerid>
+    <customername> bala</customername>
+    <productinfo>
+      <productid>100</productid>
+      <productname>laptop</productname>
+      <productquantity>1</productquantity>
+      <productprice>1000</productprice>
+    </productinfo>
+    <productinfo>
+      <productid>101</productid>
+      <productname>mobile</productname>
+      <productquantity>1</productquantity>
+      <productprice>100</productprice>
+    </productinfo>
+    
+    
+    
+    
+  </ordersinfo>
+    
+    
+    
+    
+    
+</orders>
+
+  
+  
+  
+  
+  
+  
+

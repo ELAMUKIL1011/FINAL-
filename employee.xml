@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<employeedetails>
+  <employeeinfo>
+    <employeeid>100</employeeid>
+    <employeename>abi</employeename>
+    <employeeexperience>2</employeeexperience>
+    <employeeofficeinfo>
+      <projectname>.net</projectname>
+      <skillset>programming </skillset>
+      <projectdesignation> application developer</projectdesignation>
+      <duration>2years </duration>
+      </employeeofficeinfo>
+</employeeinfo>
+  <employeeinfo>
+  <employeeid>101</employeeid>
+  <employeename>abcd</employeename>
+  <employeeexperience>5</employeeexperience>
+  <employeeofficeinfo>
+    <projectname>java</projectname>
+    <skillset> finanancial </skillset>
+    <projectdesignation> tester</projectdesignation>
+    <duration> 1year </duration>
+  </employeeofficeinfo>
+  </employeeinfo>
+  
+  
+</employeedetails>
