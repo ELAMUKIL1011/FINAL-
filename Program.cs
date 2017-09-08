@@ -3,50 +3,91 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace console_csharp_builtinfun
+namespace console_bank_system
 {
     class Program
     {
         static void Main(string[] args)
         {
-            /*char ch = 'A';
-            int num = Convert.ToInt32(ch);
-            Console.WriteLine(num);
-            num+=32;
-            Console.WriteLine(Convert.ToChar(num)); */
+           /* int x = Console.Read();
+            Console.WriteLine(x); */
 
-            string Str1 = "abcd";
-           Console.WriteLine(Str1.ToUpper());
-
-           /* string str = "Hello world";
-            int Cu=0;
-            int Cl=0;
-            foreach (char c in str)
+            int accountid;
+            string customername;
+            string customeraddress;
+            DateTime customerdob;
+            string accounttype;
+            double accountbalance;
+            Console.WriteLine("enter the Account id");
+            accountid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Name: ");
+            customername=Console.ReadLine();
+            customername=customername.ToUpper();
+            Console.WriteLine("Enter Address: ");
+            
+            customeraddress = Console.ReadLine();
+            Console.WriteLine("Enter DOB(mm/dd/yyyy: ");
+            
+            customerdob = Convert.ToDateTime(Console.ReadLine());
+            Console.WriteLine("Enter type: ");
+            
+            accounttype = Console.ReadLine();
+            Console.WriteLine("Enter AccountBalance: ");
+            
+            accountbalance = Convert.ToDouble(Console.ReadLine());
+            int option;
+            do
             {
-                if (char.IsUpper(c))
+                Console.WriteLine("enter an option: 1. deposit  2.withdrawal 3. check balance 4. customer detail 5. exit ");
+                option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
                 {
-                    Cu++;
+                    case 1:
+                        Console.WriteLine("enter the amount to be deposited");
+                        int depamt = Convert.ToInt32(Console.ReadLine());
+                        if (depamt < 500)
+                        {
+                            Console.WriteLine("Please deposit a amount greater than 500");
+                        }
+                        else
+                        {
+                            accountbalance = accountbalance + depamt;
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine("enter the amount to be withdrawn");
+                        int withdrawnamt = Convert.ToInt32(Console.ReadLine());
+                        if (withdrawnamt > 5000 || accountbalance < withdrawnamt)
+                        {
+                            Console.WriteLine("Amount cannot be withdrawn");
+                        }
+                        else
+                        {
+                            accountbalance = accountbalance - withdrawnamt;
+                            
+                        }
+                        break;
+                    case 3:
+                        Console.WriteLine("Account Balance : " + accountbalance);
+                        break;
+                    case 4:
+                        Console.WriteLine("Customer Details :");
+                        Console.WriteLine("Customer Name :" + customername);
+                        Console.WriteLine("Customer Address :" + customeraddress);
+                        TimeSpan t = DateTime.Now - customerdob;
+                        int age = Convert.ToInt32(t.TotalDays / 365);
+                        Console.WriteLine("Customer Age :" + age);
+                        break;
+                    case 5:
+                        Console.WriteLine("Exit");
+                        break;
                 }
-                else if (char.IsLower(c))
-                {
-                    Cl++;
-                }
-                Console.WriteLine(c);
 
-            }
-            Console.WriteLine(Cu );
-            Console.WriteLine(Cl); */
 
-         /*   string str = "89 61 62 90 64";
-            string[] str_array =str.Split(' ');
-            int[] marks =Array.ConvertAll(str_array,int.Parse);
-            Array.Sort(marks);
-            Array.Reverse(marks);
-            foreach (int m in marks)
-            {
-                Console.WriteLine(m);
-            } */
+            } while (option != 5);
             Console.ReadLine();
         }
+        
+        }
     }
-}
+
