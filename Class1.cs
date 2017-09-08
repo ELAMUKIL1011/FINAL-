@@ -3,18 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace sum_library
+namespace calc_salary
 {
-    public class clac
+    public class Class1
     {
-        public int getsum(int num1, int num2) // must be public for dll 
-        {
-
-
-            return num1 + num2+200;
-
-        
-        }
-
     }
 }
