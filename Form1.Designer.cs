@@ -1,4 +1,4 @@
-﻿namespace win_ado_day1_assignment
+﻿namespace Win_ado_day1
 {
     partial class Form1
     {
@@ -28,162 +28,192 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_orderid = new System.Windows.Forms.Label();
             this.lbl_customerid = new System.Windows.Forms.Label();
-            this.lbl_itemid = new System.Windows.Forms.Label();
-            this.lbl_itemqty = new System.Windows.Forms.Label();
-            this.lbl_itemprice = new System.Windows.Forms.Label();
-            this.lbl_orderdate = new System.Windows.Forms.Label();
-            this.txt_orderid = new System.Windows.Forms.TextBox();
+            this.lbl_customername = new System.Windows.Forms.Label();
+            this.lbl_customerage = new System.Windows.Forms.Label();
+            this.lbl_customercity = new System.Windows.Forms.Label();
+            this.lbl_customerpassword = new System.Windows.Forms.Label();
             this.txt_customerid = new System.Windows.Forms.TextBox();
-            this.txt_itemprice = new System.Windows.Forms.TextBox();
-            this.txt_orderdate = new System.Windows.Forms.TextBox();
-            this.cmb_itemname = new System.Windows.Forms.ComboBox();
-            this.cmb_itemquantity = new System.Windows.Forms.ComboBox();
-            this.btn_placeorder = new System.Windows.Forms.Button();
+            this.txt_customername = new System.Windows.Forms.TextBox();
+            this.txt_customerage = new System.Windows.Forms.TextBox();
+            this.txt_customerpassword = new System.Windows.Forms.TextBox();
+            this.btn_addcustomer = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.cmb_cities = new System.Windows.Forms.ComboBox();
+            this.btn_findcustomer = new System.Windows.Forms.Button();
+            this.btn_updatecustomer = new System.Windows.Forms.Button();
+            this.btn_deletecustomer = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lbl_orderid
-            // 
-            this.lbl_orderid.AutoSize = true;
-            this.lbl_orderid.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderid.Location = new System.Drawing.Point(121, 20);
-            this.lbl_orderid.Name = "lbl_orderid";
-            this.lbl_orderid.Size = new System.Drawing.Size(92, 33);
-            this.lbl_orderid.TabIndex = 0;
-            this.lbl_orderid.Text = "order id";
             // 
             // lbl_customerid
             // 
             this.lbl_customerid.AutoSize = true;
             this.lbl_customerid.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_customerid.Location = new System.Drawing.Point(87, 71);
+            this.lbl_customerid.Location = new System.Drawing.Point(89, 42);
             this.lbl_customerid.Name = "lbl_customerid";
             this.lbl_customerid.Size = new System.Drawing.Size(126, 33);
-            this.lbl_customerid.TabIndex = 1;
+            this.lbl_customerid.TabIndex = 0;
             this.lbl_customerid.Text = "customer id";
+            this.lbl_customerid.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lbl_itemid
+            // lbl_customername
             // 
-            this.lbl_itemid.AutoSize = true;
-            this.lbl_itemid.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_itemid.Location = new System.Drawing.Point(143, 127);
-            this.lbl_itemid.Name = "lbl_itemid";
-            this.lbl_itemid.Size = new System.Drawing.Size(53, 33);
-            this.lbl_itemid.TabIndex = 2;
-            this.lbl_itemid.Text = "item";
+            this.lbl_customername.AutoSize = true;
+            this.lbl_customername.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_customername.Location = new System.Drawing.Point(77, 89);
+            this.lbl_customername.Name = "lbl_customername";
+            this.lbl_customername.Size = new System.Drawing.Size(155, 33);
+            this.lbl_customername.TabIndex = 1;
+            this.lbl_customername.Text = "customer name";
             // 
-            // lbl_itemqty
+            // lbl_customerage
             // 
-            this.lbl_itemqty.AutoSize = true;
-            this.lbl_itemqty.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_itemqty.Location = new System.Drawing.Point(71, 180);
-            this.lbl_itemqty.Name = "lbl_itemqty";
-            this.lbl_itemqty.Size = new System.Drawing.Size(142, 33);
-            this.lbl_itemqty.TabIndex = 3;
-            this.lbl_itemqty.Text = "item quantity";
+            this.lbl_customerage.AutoSize = true;
+            this.lbl_customerage.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_customerage.Location = new System.Drawing.Point(77, 136);
+            this.lbl_customerage.Name = "lbl_customerage";
+            this.lbl_customerage.Size = new System.Drawing.Size(142, 33);
+            this.lbl_customerage.TabIndex = 2;
+            this.lbl_customerage.Text = "customer age";
             // 
-            // lbl_itemprice
+            // lbl_customercity
             // 
-            this.lbl_itemprice.AutoSize = true;
-            this.lbl_itemprice.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_itemprice.Location = new System.Drawing.Point(121, 224);
-            this.lbl_itemprice.Name = "lbl_itemprice";
-            this.lbl_itemprice.Size = new System.Drawing.Size(102, 33);
-            this.lbl_itemprice.TabIndex = 4;
-            this.lbl_itemprice.Text = "itemprice";
+            this.lbl_customercity.AutoSize = true;
+            this.lbl_customercity.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_customercity.Location = new System.Drawing.Point(71, 183);
+            this.lbl_customercity.Name = "lbl_customercity";
+            this.lbl_customercity.Size = new System.Drawing.Size(144, 33);
+            this.lbl_customercity.TabIndex = 3;
+            this.lbl_customercity.Text = "customer city";
+            this.lbl_customercity.Click += new System.EventHandler(this.label4_Click);
             // 
-            // lbl_orderdate
+            // lbl_customerpassword
             // 
-            this.lbl_orderdate.AutoSize = true;
-            this.lbl_orderdate.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderdate.Location = new System.Drawing.Point(101, 271);
-            this.lbl_orderdate.Name = "lbl_orderdate";
-            this.lbl_orderdate.Size = new System.Drawing.Size(122, 33);
-            this.lbl_orderdate.TabIndex = 5;
-            this.lbl_orderdate.Text = "order date ";
-            // 
-            // txt_orderid
-            // 
-            this.txt_orderid.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderid.Location = new System.Drawing.Point(244, 12);
-            this.txt_orderid.Name = "txt_orderid";
-            this.txt_orderid.Size = new System.Drawing.Size(169, 41);
-            this.txt_orderid.TabIndex = 6;
+            this.lbl_customerpassword.AutoSize = true;
+            this.lbl_customerpassword.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_customerpassword.Location = new System.Drawing.Point(54, 238);
+            this.lbl_customerpassword.Name = "lbl_customerpassword";
+            this.lbl_customerpassword.Size = new System.Drawing.Size(200, 33);
+            this.lbl_customerpassword.TabIndex = 4;
+            this.lbl_customerpassword.Text = "customer password";
             // 
             // txt_customerid
             // 
             this.txt_customerid.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_customerid.Location = new System.Drawing.Point(236, 71);
+            this.txt_customerid.Location = new System.Drawing.Point(295, 42);
             this.txt_customerid.Name = "txt_customerid";
-            this.txt_customerid.Size = new System.Drawing.Size(177, 41);
-            this.txt_customerid.TabIndex = 7;
+            this.txt_customerid.Size = new System.Drawing.Size(100, 41);
+            this.txt_customerid.TabIndex = 5;
             // 
-            // txt_itemprice
+            // txt_customername
             // 
-            this.txt_itemprice.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_itemprice.Location = new System.Drawing.Point(236, 221);
-            this.txt_itemprice.Name = "txt_itemprice";
-            this.txt_itemprice.Size = new System.Drawing.Size(100, 41);
-            this.txt_itemprice.TabIndex = 8;
+            this.txt_customername.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customername.Location = new System.Drawing.Point(295, 89);
+            this.txt_customername.Name = "txt_customername";
+            this.txt_customername.Size = new System.Drawing.Size(213, 41);
+            this.txt_customername.TabIndex = 6;
             // 
-            // txt_orderdate
+            // txt_customerage
             // 
-            this.txt_orderdate.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderdate.Location = new System.Drawing.Point(236, 268);
-            this.txt_orderdate.Name = "txt_orderdate";
-            this.txt_orderdate.Size = new System.Drawing.Size(201, 41);
-            this.txt_orderdate.TabIndex = 9;
+            this.txt_customerage.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customerage.Location = new System.Drawing.Point(295, 136);
+            this.txt_customerage.Name = "txt_customerage";
+            this.txt_customerage.Size = new System.Drawing.Size(59, 41);
+            this.txt_customerage.TabIndex = 7;
             // 
-            // cmb_itemname
+            // txt_customerpassword
             // 
-            this.cmb_itemname.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_itemname.FormattingEnabled = true;
-            this.cmb_itemname.Location = new System.Drawing.Point(236, 119);
-            this.cmb_itemname.Name = "cmb_itemname";
-            this.cmb_itemname.Size = new System.Drawing.Size(177, 41);
-            this.cmb_itemname.TabIndex = 10;
-            this.cmb_itemname.SelectedIndexChanged += new System.EventHandler(this.cmb_itemname_SelectedIndexChanged);
+            this.txt_customerpassword.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customerpassword.Location = new System.Drawing.Point(295, 230);
+            this.txt_customerpassword.Name = "txt_customerpassword";
+            this.txt_customerpassword.Size = new System.Drawing.Size(210, 41);
+            this.txt_customerpassword.TabIndex = 9;
             // 
-            // cmb_itemquantity
+            // btn_addcustomer
             // 
-            this.cmb_itemquantity.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_itemquantity.FormattingEnabled = true;
-            this.cmb_itemquantity.Location = new System.Drawing.Point(236, 172);
-            this.cmb_itemquantity.Name = "cmb_itemquantity";
-            this.cmb_itemquantity.Size = new System.Drawing.Size(121, 41);
-            this.cmb_itemquantity.TabIndex = 11;
-            this.cmb_itemquantity.SelectedIndexChanged += new System.EventHandler(this.cmb_itemquantity_SelectedIndexChanged);
+            this.btn_addcustomer.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addcustomer.Location = new System.Drawing.Point(60, 292);
+            this.btn_addcustomer.Name = "btn_addcustomer";
+            this.btn_addcustomer.Size = new System.Drawing.Size(130, 95);
+            this.btn_addcustomer.TabIndex = 10;
+            this.btn_addcustomer.Text = "add customer";
+            this.btn_addcustomer.UseVisualStyleBackColor = true;
+            this.btn_addcustomer.Click += new System.EventHandler(this.btn_addcustomer_Click);
             // 
-            // btn_placeorder
+            // btn_clear
             // 
-            this.btn_placeorder.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_placeorder.Location = new System.Drawing.Point(469, 16);
-            this.btn_placeorder.Name = "btn_placeorder";
-            this.btn_placeorder.Size = new System.Drawing.Size(112, 148);
-            this.btn_placeorder.TabIndex = 12;
-            this.btn_placeorder.Text = "place order";
-            this.btn_placeorder.UseVisualStyleBackColor = true;
-            this.btn_placeorder.Click += new System.EventHandler(this.button1_Click);
+            this.btn_clear.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.Location = new System.Drawing.Point(427, 424);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(129, 107);
+            this.btn_clear.TabIndex = 11;
+            this.btn_clear.Text = "clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // cmb_cities
+            // 
+            this.cmb_cities.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_cities.FormattingEnabled = true;
+            this.cmb_cities.Location = new System.Drawing.Point(295, 183);
+            this.cmb_cities.Name = "cmb_cities";
+            this.cmb_cities.Size = new System.Drawing.Size(210, 41);
+            this.cmb_cities.TabIndex = 12;
+            // 
+            // btn_findcustomer
+            // 
+            this.btn_findcustomer.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_findcustomer.Location = new System.Drawing.Point(242, 286);
+            this.btn_findcustomer.Name = "btn_findcustomer";
+            this.btn_findcustomer.Size = new System.Drawing.Size(112, 107);
+            this.btn_findcustomer.TabIndex = 13;
+            this.btn_findcustomer.Text = "find customer";
+            this.btn_findcustomer.UseVisualStyleBackColor = true;
+            this.btn_findcustomer.Click += new System.EventHandler(this.btn_findcustomer_Click);
+            // 
+            // btn_updatecustomer
+            // 
+            this.btn_updatecustomer.Font = new System.Drawing.Font("Papyrus", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_updatecustomer.Location = new System.Drawing.Point(402, 302);
+            this.btn_updatecustomer.Name = "btn_updatecustomer";
+            this.btn_updatecustomer.Size = new System.Drawing.Size(201, 91);
+            this.btn_updatecustomer.TabIndex = 15;
+            this.btn_updatecustomer.Text = "update customer";
+            this.btn_updatecustomer.UseVisualStyleBackColor = true;
+            this.btn_updatecustomer.Click += new System.EventHandler(this.btn_updatecustomer_Click);
+            // 
+            // btn_deletecustomer
+            // 
+            this.btn_deletecustomer.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deletecustomer.ForeColor = System.Drawing.Color.Red;
+            this.btn_deletecustomer.Location = new System.Drawing.Point(217, 440);
+            this.btn_deletecustomer.Name = "btn_deletecustomer";
+            this.btn_deletecustomer.Size = new System.Drawing.Size(157, 75);
+            this.btn_deletecustomer.TabIndex = 16;
+            this.btn_deletecustomer.Text = "delete customer";
+            this.btn_deletecustomer.UseVisualStyleBackColor = true;
+            this.btn_deletecustomer.Click += new System.EventHandler(this.btn_deletecustomer_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 402);
-            this.Controls.Add(this.btn_placeorder);
-            this.Controls.Add(this.cmb_itemquantity);
-            this.Controls.Add(this.cmb_itemname);
-            this.Controls.Add(this.txt_orderdate);
-            this.Controls.Add(this.txt_itemprice);
+            this.ClientSize = new System.Drawing.Size(729, 570);
+            this.Controls.Add(this.btn_deletecustomer);
+            this.Controls.Add(this.btn_updatecustomer);
+            this.Controls.Add(this.btn_findcustomer);
+            this.Controls.Add(this.cmb_cities);
+            this.Controls.Add(this.btn_clear);
+            this.Controls.Add(this.btn_addcustomer);
+            this.Controls.Add(this.txt_customerpassword);
+            this.Controls.Add(this.txt_customerage);
+            this.Controls.Add(this.txt_customername);
             this.Controls.Add(this.txt_customerid);
-            this.Controls.Add(this.txt_orderid);
-            this.Controls.Add(this.lbl_orderdate);
-            this.Controls.Add(this.lbl_itemprice);
-            this.Controls.Add(this.lbl_itemqty);
-            this.Controls.Add(this.lbl_itemid);
+            this.Controls.Add(this.lbl_customerpassword);
+            this.Controls.Add(this.lbl_customercity);
+            this.Controls.Add(this.lbl_customerage);
+            this.Controls.Add(this.lbl_customername);
             this.Controls.Add(this.lbl_customerid);
-            this.Controls.Add(this.lbl_orderid);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -194,19 +224,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_orderid;
         private System.Windows.Forms.Label lbl_customerid;
-        private System.Windows.Forms.Label lbl_itemid;
-        private System.Windows.Forms.Label lbl_itemqty;
-        private System.Windows.Forms.Label lbl_itemprice;
-        private System.Windows.Forms.Label lbl_orderdate;
-        private System.Windows.Forms.TextBox txt_orderid;
+        private System.Windows.Forms.Label lbl_customername;
+        private System.Windows.Forms.Label lbl_customerage;
+        private System.Windows.Forms.Label lbl_customercity;
+        private System.Windows.Forms.Label lbl_customerpassword;
         private System.Windows.Forms.TextBox txt_customerid;
-        private System.Windows.Forms.TextBox txt_itemprice;
-        private System.Windows.Forms.TextBox txt_orderdate;
-        private System.Windows.Forms.ComboBox cmb_itemname;
-        private System.Windows.Forms.ComboBox cmb_itemquantity;
-        private System.Windows.Forms.Button btn_placeorder;
+        private System.Windows.Forms.TextBox txt_customername;
+        private System.Windows.Forms.TextBox txt_customerage;
+        private System.Windows.Forms.TextBox txt_customerpassword;
+        private System.Windows.Forms.Button btn_addcustomer;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.ComboBox cmb_cities;
+        private System.Windows.Forms.Button btn_findcustomer;
+        private System.Windows.Forms.Button btn_updatecustomer;
+        private System.Windows.Forms.Button btn_deletecustomer;
     }
 }
 

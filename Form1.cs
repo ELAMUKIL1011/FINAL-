@@ -8,118 +8,186 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-namespace win_ado_day1_assignment
+
+namespace Win_ado_day1
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new 
-            SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
+        SqlConnection con =
+                 new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
+
+
         public Form1()
         {
             InitializeComponent();
-            cmb_itemquantity.Items.Add("1");
-            cmb_itemquantity.Items.Add("2");
-            cmb_itemquantity.Items.Add("3");
-            cmb_itemquantity.Items.Add("4");
-            cmb_itemquantity.Items.Add("5");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            txt_customerage.Text = "";
+            cmb_cities.Text = "";
+            txt_customerid.Text = "";
+            txt_customername.Text = "";
+            txt_customerpassword.Text = "";
+
+        }
+
+        private void btn_addcustomer_Click(object sender, EventArgs e)
+        {
+           
             con.Open();
-            SqlCommand find_user = new SqlCommand
-                (@"select count(*) from customer where customerid=@customerid", con);
-            int customerid = Convert.ToInt32(txt_customerid.Text);
-            find_user.Parameters.AddWithValue("@customerid", customerid);
-            int count = Convert.ToInt32(find_user.ExecuteScalar());
-            if (count > 0)
-            {
-                SqlCommand update_order = new SqlCommand(@"insert orders values 
-(@customerid,@itemid,@itemqty,getdate()) ", con);
-                update_order.Parameters.AddWithValue("@customerid", txt_customerid.Text);
-                update_order.Parameters.AddWithValue("@itemid", cmb_itemname.SelectedValue);
-                update_order.Parameters.AddWithValue("@itemqty", cmb_itemquantity.Text);
-                
-                update_order.ExecuteNonQuery();
+
+            SqlCommand com_customers_insert = 
+                new SqlCommand("insert customer values (@customername,@customerage,@customercityid,@customerpassword)", con);
 
 
-                SqlCommand get_orderid = new SqlCommand("select @@identity", con);
-                int orderid= Convert.ToInt32(get_orderid.ExecuteScalar());
-                txt_orderid.Text = orderid.ToString();
+            com_customers_insert.Parameters.AddWithValue("@customername", txt_customername.Text);
+            com_customers_insert.Parameters.AddWithValue("@customerage", txt_customerage.Text);
+            com_customers_insert.Parameters.AddWithValue("@customercityid", cmb_cities.SelectedValue);// cityid;
+            com_customers_insert.Parameters.AddWithValue("@customerpassword", txt_customerpassword.Text);
 
-            
-                MessageBox.Show("order placed + order id " + orderid);
-              
-
-              
-            }
-            else
-            {
-                MessageBox.Show("invalid customer id");
-            
-            }
-
+            com_customers_insert.ExecuteNonQuery();
+            SqlCommand com_customerid= new SqlCommand ("Select @@identity",con);
+            int customerid= Convert.ToInt32(com_customerid.ExecuteScalar());
+            txt_customerid.Text= customerid.ToString();
 
 
             con.Close();
-     
-
+            MessageBox.Show("cusotmer added , customer id" + customerid);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             con.Open();
-            List<item> list_item = new List<item>();
 
-            SqlCommand read_items = new SqlCommand(@"select * from items",con);
-            SqlDataReader dr_readitems = read_items.ExecuteReader();
- 
-            while (dr_readitems.Read())
+            List<city> list_cities = new List<city>();
+            SqlCommand com_read_cities = new SqlCommand("select * from cities", con);
+            SqlDataReader dr_cities = com_read_cities.ExecuteReader();
+            while (dr_cities.Read())
             {
-                item i = new item();
-                i.itemid = dr_readitems.GetInt32(0);
-                i.itemname = dr_readitems.GetString(1);
-                list_item.Add(i);
-            
+
+
+                city c = new city();
+                c.cityid = dr_cities.GetInt32(0);
+                c.cityname = dr_cities.GetString(1);
+                list_cities.Add(c);
             
             }
-con.Close();
-              cmb_itemname.DisplayMember = "itemname";
-            cmb_itemname.ValueMember = "itemid";
 
 
-            cmb_itemname.DataSource = list_item;
+
+            con.Close();
+            cmb_cities.DataSource = list_cities;
+            cmb_cities.DisplayMember = "cityname";
+            cmb_cities.ValueMember = "cityid";
+        }
+
+        private void btn_findcustomer_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            SqlCommand com_read_customer = new SqlCommand
+            (@"select customerid,customername,customerage,cityname
+from customer
+join cities on
+customer.customercityid=cities.cityid where customerid=@customerid", con);
+            int customerid = Convert.ToInt32(txt_customerid.Text);
+            com_read_customer.Parameters.AddWithValue("@customerid", customerid);
+            SqlDataReader dr_customer = com_read_customer.ExecuteReader();
+            if (dr_customer.Read())
+            {
+
+                txt_customerid.Text = dr_customer.GetInt32(0).ToString();
+                txt_customername.Text = dr_customer.GetString(1);
+                txt_customerage.Text = dr_customer.GetInt32(2).ToString();
+                cmb_cities.Text = dr_customer.GetString(3);
+            
+            }
+            else
+            {
+
+                MessageBox.Show("customer not found");
+            
+            }
 
 
+
+
+            con.Close();
+
+        }
+
+        private void btn_updatecustomer_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            SqlCommand com_update_customer = new SqlCommand(@"update customer set 
+customername = @customername,customercityid =@customercityid 
+where customerid=@customerid", con);
+            com_update_customer.Parameters.AddWithValue("@customername", txt_customername.Text);
+            com_update_customer.Parameters.AddWithValue("@customercityid", cmb_cities.SelectedValue);
+            com_update_customer.Parameters.AddWithValue("@customerid", txt_customerid.Text);
+            int count = com_update_customer.ExecuteNonQuery();
+
+
+
+            con.Close();
+            if (count > 0)
+            {
+                MessageBox.Show("customer updated");
+
+            }
+            else {
+
+                MessageBox.Show("customer not found");
+            }
+
+        }
+
+        private void btn_deletecustomer_Click(object sender, EventArgs e)
+        {
+         DialogResult result=   MessageBox.Show("do you want to delete this customer ?"," delete ?" ,MessageBoxButtons.YesNo);
+         if (result == DialogResult.Yes)
+         {
+
+             con.Open();
+             SqlCommand com_delete_customer = new SqlCommand(@"delete customer where customerid=@customerid", con);
+             com_delete_customer.Parameters.AddWithValue("@customerid", txt_customerid.Text);
+             int count = com_delete_customer.ExecuteNonQuery();
+             con.Close();
+             if (count > 0)
+             {
+
+                 MessageBox.Show("customer deleted");
+
+
+
+             }
+             else
+             {
+                 MessageBox.Show("customer not found");
+             
+             }
 
          
-            
+         }
+         
+
+
+
+
 
         }
 
-   
-
-        private void cmb_itemquantity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void cmb_itemname_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            con.Open();           
-            SqlCommand show_price = new SqlCommand
-                (@"select itemprice from items where itemid=@itemid", con);
-            
-            show_price.Parameters.AddWithValue("@itemid",cmb_itemname.SelectedValue);
-            SqlDataReader read_itemname = show_price.ExecuteReader();
-            if (read_itemname.Read())
-            {
-
-                txt_itemprice.Text = read_itemname.GetInt32(0).ToString();
-                
-
-            }
-            con.Close();
-        }
     }
 }
